@@ -70,3 +70,16 @@ Laravel 12 + Inertia.js + React dashboard to manage Docker-based WordPress sites
 
 ## Repository
 Push to a public repo named `simple-wp-site-manager` when ready. No vendor-specific naming is used.
+
+## Server & SSH
+- VPS: 167.172.86.3
+- SSH: ssh root@167.172.86.3
+
+## Quick monitor API test (example)
+TOKEN='0AtCDSQI0oM07BkHQFTaJj32ontvjoI1Cxxo8EHy'
+curl -X POST https://sandfly-machine-neil.ngrok-free.dev/api/site-status \
+  -H "X-Monitor-Token: $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"container_name":"wp-test-wordpress-1","status":"running"}'
+# Expected: {"message":"status updated"}
+
